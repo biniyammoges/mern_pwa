@@ -1,0 +1,52 @@
+.posts {
+  margin: 3rem auto;
+  .grid {
+    @include grid(4);
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    // overflow: hidden;
+    max-width: 300px;
+    border: 1px solid rgba(51, 51, 51, 0);
+    cursor: pointer;
+    position: relative;
+
+    .del-btn {
+      position: absolute;
+      height: 25px;
+      padding: 0;
+      width: 25px;
+      color: #fff;
+      background-color: red;
+      border-radius: 20px 20px 20px 0;
+      border: 1px solid red;
+      top: -15px;
+      right: -15px;
+      // opacity: 0;
+      // visibility: hidden;
+      transition: 0.3s ease;
+    }
+
+    &:hover > .del-btn {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .card-image {
+      max-height: 130px;
+      overflow: hidden;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .card-body {
+      padding: 1rem 0.5rem;
+      font-size: 17px;
+    }
+
+    &:hover {
+      border: 1px solid #333;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@mixin grid($grid) {
+  display: grid;
+  grid-template-columns: repeat($grid, 1fr);
+  gap: 30px;
+  align-items: flex-start;
+}
+
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == extra-l {
+    @media (max-width: 1800px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == large {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == extra-s {
+    @media (max-width: 520px) {
+      @content;
+    }
+  }
+}

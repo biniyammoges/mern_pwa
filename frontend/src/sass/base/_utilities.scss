@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(46, 47, 73);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+input:not([type="file"]) {
+  padding: 15px 20px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 17px;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+
+  .form-group {
+    margin: 10px 0;
+
+    input[type="file"] {
+      display: none;
+    }
+
+    &.file label {
+      height: 100px;
+      background-color: #fff;
+      border-radius: 10px;
+      width: 100px;
+      @include flex;
+      border: dotted 1px rgba(51, 51, 51, 0.342);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    &.flex {
+      justify-content: flex-start;
+    }
+
+    .image-preview {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-right: 10px;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.alert {
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  width: 100%;
+  display: block;
+
+  &-success {
+    background-color: #e2fae4;
+    color: #50af50;
+  }
+
+  &-warning {
+    background-color: #fceeef;
+    color: #c53e47;
+  }
+}

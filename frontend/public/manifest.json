@@ -1,0 +1,14 @@
+{
+  "name": "mern stack pwa",
+  "short_name": "pwa",
+  "start_url": "./index.html",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#333",
+  "description": "pwa made with react",
+  "dir": "ltr",
+  "lang": "eng-US",
+  "orientation": "portrait-primary",
+  "icons": [{ "src": "./favicon.png", "type": "image/png", "size": "144x144" }]
+}

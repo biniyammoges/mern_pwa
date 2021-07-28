@@ -1,0 +1,327 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #2e2f49;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+input:not([type=file]) {
+  padding: 15px 20px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 100%;
+  font-size: 17px;
+}
+
+form {
+  max-width: 400px;
+  margin: auto;
+}
+form .form-group {
+  margin: 10px 0;
+}
+form .form-group input[type=file] {
+  display: none;
+}
+form .form-group.file label {
+  height: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: dotted 1px rgba(51, 51, 51, 0.342);
+  font-size: 25px;
+  cursor: pointer;
+}
+form .form-group.flex {
+  justify-content: flex-start;
+}
+form .form-group .image-preview {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+form .form-group .image-preview img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.alert {
+  padding: 15px 20px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  width: 100%;
+  display: block;
+}
+.alert-success {
+  background-color: #e2fae4;
+  color: #50af50;
+}
+.alert-warning {
+  background-color: #fceeef;
+  color: #c53e47;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #fff;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+}
+header .flex {
+  justify-content: space-between;
+}
+header .nav-brand {
+  font-size: 22px;
+  font-weight: 600;
+  border: 3px solid #333;
+  border-radius: 5px;
+  padding: 0 5px;
+}
+header ul li {
+  margin: 0 5px;
+}
+header ul li a {
+  font-size: 18px;
+  padding: 5px 8px;
+}
+header ul .notify-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+header .menu-btn {
+  height: 15px;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  display: none;
+}
+header .menu-btn .btn-line {
+  height: 3px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: #333;
+}
+
+.posts {
+  margin: 3rem auto;
+}
+.posts .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  align-items: flex-start;
+}
+.posts .card {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 300px;
+  border: 1px solid rgba(51, 51, 51, 0);
+  cursor: pointer;
+  position: relative;
+}
+.posts .card .del-btn {
+  position: absolute;
+  height: 25px;
+  padding: 0;
+  width: 25px;
+  color: #fff;
+  background-color: red;
+  border-radius: 20px 20px 20px 0;
+  border: 1px solid red;
+  top: -15px;
+  right: -15px;
+  transition: 0.3s ease;
+}
+.posts .card:hover > .del-btn {
+  opacity: 1;
+  visibility: visible;
+}
+.posts .card .card-image {
+  max-height: 130px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+.posts .card .card-body {
+  padding: 1rem 0.5rem;
+  font-size: 17px;
+}
+.posts .card:hover {
+  border: 1px solid #333;
+}
+
+.addpost {
+  position: fixed;
+  bottom: 40px;
+  right: 80px;
+}
+.addpost .add-btn {
+  background-color: #333;
+  border: none;
+  font-size: 25px;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.addpost .modal-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.addpost .modal-wrapper .modal {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 20px;
+}
+.addpost .modal-wrapper .modal .modal-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 25px;
+  position: relative;
+}
+.addpost .modal-wrapper .modal .modal-header button {
+  background-color: transparent;
+  font-size: 22px;
+  border-radius: 10px;
+}
+.addpost .modal-wrapper .modal .modal-header button:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.addpost .modal-wrapper .modal .modal-header.flex {
+  justify-content: space-between;
+}
+.addpost .modal-wrapper .modal .modal-body {
+  padding: 10px 15px;
+}
+.addpost .modal-wrapper .modal .modal-body form button {
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  margin: 2rem 0;
+}
+
+.modal-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@media (max-width: 768px) {
+  header .menu-btn {
+    display: flex;
+  }
+  header ul.nav {
+    position: fixed;
+    display: block;
+    top: 70px;
+    left: -100%;
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s left cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: #fff;
+    box-shadow: 2px 4px 2px rgba(0, 0, 0, 0.05);
+  }
+  header ul.nav li {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+  header ul.nav li:last-child {
+    border-bottom: none;
+  }
+  header ul.nav li a {
+    padding: 10px 20px;
+    display: block;
+  }
+  header ul.nav li a.notify-btn {
+    display: inline;
+  }
+  header.active ul.nav {
+    left: 0;
+    transition: 0.3s left;
+  }
+
+  .posts .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 520px) {
+  .posts .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    align-items: flex-start;
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
